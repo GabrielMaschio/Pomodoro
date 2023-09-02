@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Pomodoro</title>
+</head>
+<body class="vermelho">
+    <div class="alert"></div>
+    <audio src="./bell.wav"></audio>
+    <div class="container">
+        <div class="botao-opc">
+            <button id="pomodoro" class="selecionado">
+                Pomodoro
+            </button>
+            
+            <button id="break">
+                Short break
+            </button>
+        </div>
+
+        <div id="time">
+            <div class="circle" style="--clr: #ffffff;">
+                <div class="dots"></div>
+                <svg>
+                    <circle cx="150" cy="150" r="150"></circle>
+                    <circle cx="150" cy="150" r="150" id="bar"></circle>
+                </svg>
+                <div id="time_circle">
+                    <h2 id="contador" action="doing">25:00</h2>
+                </div>
+            </div>
+        </div>
+
+        <div id="botao">
+            <button id="reset">
+                <i class="fa-sharp fa-solid fa-rotate-right"></i>
+            </button>            
+
+            <button id="power" action="start">
+                <i class="fa-solid fa-play"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

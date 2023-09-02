@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.vermelho {
+    background: linear-gradient(320deg, #dfa978, #f55c5c, #ffef78); 
+}
+
+.azul {
+    background: linear-gradient(320deg, #df78d1, #735cf5, #e978ff);
+}
+
+.container {
+    background: transparent;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.3);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+/* CONTADOR */
+#time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+#time .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 310px;
+    height: 310px;
+}
+
+#time .circle svg {
+    position: relative;
+    width: 310px;
+    height: 310px;
+    transform: rotate(270deg);
+}
+
+#time .circle svg circle {
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 10;
+    stroke: rgba(35, 35, 35, 0.1);
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+}
+
+#time .circle svg circle:nth-child(2) {
+    stroke: var(--clr);
+    stroke-dasharray: 942;
+    stroke-dashoffset: 0;
+}
+
+#time div {
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+    font-size: 1.5em;
+}
+
+#time div span {
+    position: absolute;
+    transform: translateX(-50%) translateY(-10px);
+    font-size: 0.35em;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+#time .dots {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+#time .dots:before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 15px;
+    height: 15px;
+    background: var(--clr);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+}
+
+/* BOTAO */
+#botao {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#botao button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    padding: 0.6rem;
+
+    font-size: 1.5rem;
+
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}    
+
+#botao button:hover {
+    background: transparent;
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.3);
+}
+
+.botao-opc {
+    display: flex;
+    gap: 0.5rem;
+    font-family: "Varela Round, sans-serif";
+}
+
+.botao-opc button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 30px;
+    padding: 0.6rem;
+
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    background-color: rgba(0, 0, 0, 0.0);
+    color: white;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.botao-opc button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.3);
+    color: black;
+}
+
+button.selecionado {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* ALERTA */
+
+.message {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    padding: 19px 60px;
+    border-radius: 5px;
+    background-color: rgba(35, 35, 35, 0.3);
+    color: white;
+    animation: slidein 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slidein {
+    0% {
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.message::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 0px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: time 5s forwards;
+}
+
+@keyframes time {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
